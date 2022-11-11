@@ -1,0 +1,136 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #2c3e50;
+}
+
+.box {
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: ease-in-out 0.4s;
+    transition-delay: 0.4s;
+}
+.hide{
+    opacity: 1;
+}
+#pinkboard {
+	position: relative;
+	margin: auto;
+	height: 750px;
+	width: 750px;
+	animation: animate 1.2s infinite;
+}
+
+#pinkboard:before, #pinkboard:after {
+	content: '';
+	position: absolute;
+	background: #d63031;
+	width: 100px;
+	height: 160px;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+
+#pinkboard:before {
+	left: 100px;
+	transform: rotate(-45deg);
+	transform-origin: 0 100%;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+				0 10px 10px rgba(0,0,0,0.22);
+}
+
+#pinkboard:after {
+	left: 0;
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+}
+
+@keyframes animate {
+	0% {
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(.8);
+	}
+	60% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.lds-heart {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+    cursor: pointer;
+    z-index: 5;
+    transition: ease-in-out 0.4s;
+  }
+  .lds-heart div {
+    top: 32px;
+    left: 32px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #FFDDD2;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: #FFB9B9;
+  }
+  /* #lds2 div:after,
+  #lds2 div:before{
+    background: #00FFD1;
+  }
+  #lds2 div{
+    background: #00FFD1;
+  } */
+  .lds-heart div:before {
+    left: -24px;
+    border-radius: 50% 0 0 50%;
+  }
+  .lds-heart div:after {
+    top: -24px;
+    border-radius: 50% 50% 0 0;
+  }
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+  
+
+  
