@@ -27,13 +27,14 @@
     <div class="box">
         <canvas id="pinkboard"></canvas>
     </div>
-    <audio controls autoplay loop style="display: none;">
+    <audio id="autoplay" controls loop style="display: none;">
       <source src="love.mp3" type="audio/mpeg">
     </audio>
     <script>
 const heart = document.querySelector('.lds-heart')
 heart.addEventListener("click", function(){
         document.querySelector('.box').classList.add('hide');
+        document.getElementById('autoplay').play();
         // document.querySelector('source').src = 'love.mp3'
         heart.style.opacity = '0'
     })
